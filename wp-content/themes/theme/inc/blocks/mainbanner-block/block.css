@@ -1,0 +1,112 @@
+#mainbanner-block {
+  overflow: hidden;
+  position: relative;
+  min-height: 500px;
+  background: var(--Green-dark-3, #00281E);
+  border-radius: 0 0 20px 20px;
+  padding-top: 100px;
+  padding-bottom: 20px;
+  z-index: 1;
+}
+#mainbanner-block .typed-cursor {
+  display: none;
+}
+#mainbanner-block .block__content {
+  max-width: 790px;
+  display: flex;
+  flex-direction: column;
+}
+#mainbanner-block .block__title {
+  color: var(--White, #FFF);
+  font-size: calc(0.005 * 100vw + 30.4px);
+  font-style: normal;
+  font-weight: 800;
+  line-height: 150%; /* 60px */
+  text-transform: uppercase;
+}
+#mainbanner-block .block__title-additional {
+  color: var(--Secondary);
+  font-size: calc(0.005 * 100vw + 30.4px);
+  font-style: normal;
+  font-weight: 800;
+  line-height: 150%; /* 60px */
+  text-transform: uppercase;
+  /* custom cursor animation */
+}
+#mainbanner-block .block__title-additional::after {
+  content: "|";
+  display: inline;
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#mainbanner-block .block__btn {
+  margin-top: 40px;
+}
+#mainbanner-block .block__bg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 100%;
+  max-height: 100%;
+  z-index: -2;
+}
+#mainbanner-block .block__image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 100%;
+  max-height: 100%;
+  z-index: -1;
+}
+
+/*============ MEDIA ==================*/
+@media (max-width: 1700px) {
+  #mainbanner-block .block__content {
+    overflow: hidden;
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 1;
+  }
+  #mainbanner-block .block__content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(15px);
+    background-color: rgba(0, 40, 30, 0.3);
+    z-index: -1;
+  }
+}
+@media (max-width: 769px) {
+  #mainbanner-block {
+    padding-top: 75px;
+  }
+  #mainbanner-block .block__btn {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 576px) {
+  #mainbanner-block .block__btn {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 375px) {
+  #mainbanner-block .block__btn {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=block.css.map */

@@ -1,0 +1,62 @@
+@import '../../../assets/css/_colors.scss';
+
+@function calcFluidFontSize($f-min, $f-max, $v-min, $v-max) {
+	$k: ($f-max - $f-min)/($v-max - $v-min);
+	$b: $f-min - $k * $v-min;
+
+	$b: $b * 1px;
+
+	@return calc(#{$k} * 100vw + #{$b});
+}
+
+#text-big-block{
+	.block__title{
+		margin-bottom: 30px;
+
+		color: var(--121212, #121212);
+		font-size: calcFluidFontSize(32,40,320,1920);
+		font-style: normal;
+		font-weight: 800;
+		line-height: 150%; /* 60px */
+		text-transform: uppercase;
+	}
+	.text-block{
+		max-height: 315px;
+		padding-right: 30px;
+
+		color: var(--5-b-5-e-63, #5B5E63);
+	}
+}
+
+/*============ MEDIA ==================*/
+@media (max-width: 1240px) {
+
+}
+
+@media (max-width: 1221px) {
+
+}
+
+@media (max-width: 1025px) {
+
+}
+
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 769px) {
+
+}
+
+@media (max-width: 576px) {
+
+}
+
+@media (max-width: 498px) {
+
+}
+
+@media (max-width: 375px) {
+
+}

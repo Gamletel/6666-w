@@ -1,0 +1,233 @@
+@import '../../../assets/css/_colors.scss';
+
+@function calcFluidFontSize($f-min, $f-max, $v-min, $v-max) {
+  $k: ($f-max - $f-min)/($v-max - $v-min);
+  $b: $f-min - $k * $v-min;
+
+  $b: $b * 1px;
+
+  @return calc(#{$k} * 100vw + #{$b});
+}
+
+#brands-block {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+
+  .block {
+    &__container {
+      max-width: 1290px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 60px 45px 30px 45px;
+      border-radius: 10px 10px 0 0;
+      background: var(--White, #FFF);
+    }
+
+    &__banner {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 1290px;
+        width: 100%;
+        height: 50%;
+        margin: 0 auto;
+        border-radius: 0 0 10px 10px;
+        background: var(--White, #FFF);
+      }
+
+      .banner {
+        &__wrapper {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 25px;
+          min-height: 180px;
+          border-radius: 10px;
+          background: var(--Green, #2B5027);
+          padding: 20px 65px 20px 220px;
+          z-index: 1;
+        }
+
+        &__bg {
+          position: absolute;
+          top: 0;
+          left: 0;
+          max-width: 100%;
+          height: 100%;
+          width: auto;
+          z-index: -1;
+
+          svg, img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        &__content {
+          display: flex;
+          flex-direction: column;
+          gap: 1px;
+        }
+
+        &__title {
+          color: var(--White, #FFF);
+          font-size: calcFluidFontSize(26, 32, 320, 1920);
+          font-style: normal;
+          font-weight: 800;
+          line-height: 150%; /* 48px */
+        }
+
+        &__text {
+          color: var(--White, #FFF);
+          font-size: calcFluidFontSize(20, 24, 320, 1920);
+          font-style: normal;
+          font-weight: 800;
+          line-height: 150%; /* 36px */
+        }
+
+        &__btn {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  .brands {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 5px;
+
+    .brand {
+      aspect-ratio: 1/1;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      border-radius: 3px;
+      background: var(--Gray-5, #F8F8F8);
+
+      &:hover {
+
+        .brand__icon {
+          filter: grayscale(0);
+        }
+      }
+
+      &__icon {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: grayscale(1);
+
+        transition: filter;
+      }
+    }
+  }
+}
+
+/*============ MEDIA ==================*/
+@media (max-width: 1290px) {
+  #brands-block .block {
+    &__container {
+      max-width: unset;
+      padding: 30px 0;
+    }
+  }
+}
+
+@media (max-width: 1240px) {
+
+}
+
+@media (max-width: 1221px) {
+  #brands-block {
+    .brands {
+      .brand {
+        padding: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1025px) {
+
+}
+
+@media (max-width: 992px) {
+  #brands-block {
+    .block {
+      &__banner {
+        .banner {
+          &__wrapper {
+            padding: 20px 40px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  #brands-block {
+    .block {
+      &__banner {
+        .banner {
+          &__wrapper {
+            padding: 10px 20px;
+          }
+        }
+      }
+    }
+
+    .brands {
+      grid-template-columns: repeat(5, 1fr);
+
+      .brand {
+        padding: 5px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  #brands-block {
+    .block {
+      &__banner {
+        .banner {
+          &__wrapper {
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    .brands {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+@media (max-width: 498px) {
+
+}
+
+@media (max-width: 375px) {
+  #brands-block {
+    .brands {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

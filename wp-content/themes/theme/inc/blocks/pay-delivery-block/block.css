@@ -1,0 +1,95 @@
+#pay-delivery-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#pay-delivery-block .item {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  border: 1px solid var(--ececec, #ECECEC);
+  background: var(--White, #FFF);
+}
+#pay-delivery-block .item__icon {
+  padding: 40px 20px;
+  background: var(--Green, #2B5027);
+}
+#pay-delivery-block .item__icon svg, #pay-delivery-block .item__icon img {
+  width: 24px;
+  height: 24px;
+}
+#pay-delivery-block .item__content {
+  max-width: 554px;
+  margin: 50px 50px 60px 50px;
+}
+#pay-delivery-block .item__content .content__title {
+  margin-bottom: 10px;
+  color: var(--Gray-1, #292929);
+}
+#pay-delivery-block .item__content .content__text {
+  color: var(--Gray-2, #5C5C5C);
+}
+#pay-delivery-block .item__images {
+  padding: 30px 50px;
+  margin: 10px;
+  margin-left: auto;
+  border-radius: 3px;
+  background: var(--Green-dark-2, #043D2E);
+}
+#pay-delivery-block .item__images .images__title {
+  margin-bottom: 20px;
+  color: var(--White, #FFF);
+  text-align: center;
+}
+#pay-delivery-block .item__images .images__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+/*============ MEDIA ==================*/
+@media (max-width: 992px) {
+  #pay-delivery-block .item__content {
+    margin: 25px;
+  }
+}
+@media (max-width: 769px) {
+  #pay-delivery-block .item {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  #pay-delivery-block .item__icon {
+    padding: 15px;
+  }
+  #pay-delivery-block .item__content {
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+  #pay-delivery-block .item__images {
+    padding: 15px 25px;
+    margin: 0;
+  }
+  #pay-delivery-block .item__images .images__wrapper {
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+  }
+}
+@media (max-width: 576px) {
+  #pay-delivery-block {
+    gap: 10px;
+  }
+  #pay-delivery-block .item {
+    gap: 10px;
+  }
+  #pay-delivery-block .item__icon {
+    padding: 10px;
+  }
+  #pay-delivery-block .item__images .images__wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+}
+
+/*# sourceMappingURL=block.css.map */

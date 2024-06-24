@@ -1,0 +1,18 @@
+#text-big-block .block__title {
+  margin-bottom: 30px;
+  color: var(--121212, #121212);
+  font-size: calc(0.005 * 100vw + 30.4px);
+  font-style: normal;
+  font-weight: 800;
+  line-height: 150%; /* 60px */
+  text-transform: uppercase;
+}
+#text-big-block .text-block {
+  max-height: 315px;
+  padding-right: 30px;
+  color: var(--5-b-5-e-63, #5B5E63);
+}
+
+/*============ MEDIA ==================*/
+
+/*# sourceMappingURL=block.css.map */
